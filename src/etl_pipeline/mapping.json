@@ -1,0 +1,252 @@
+[
+    {
+        "source_name": "data/source/Sample - Superstore.csv",
+        "format": "file",
+        "type": "csv",
+        "extract_tables": [
+            {
+                "name": "extract_customers",
+                "target": {
+                    "service": "DB_SERVICE",
+                    "host": "DB_HOST",
+                    "port": "DB_PORT",
+                    "database": "DB_DATABASE",
+                    "user": "DB_USER",
+                    "password": "DB_PASSWORD",
+                    "table": "customers"
+                },
+                "columns": [
+                    {
+                        "source_column": "Customer ID",
+                        "target_column": "customer_id",
+                        "column_xforms": [
+                            {
+                                "function": "to_text",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Customer Name",
+                        "target_column": "customer_name",
+                        "column_xforms": [
+                            {
+                                "function": "to_text",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Segment",
+                        "target_column": "segment",
+                        "column_xforms": [
+                            {
+                                "function": "to_text",
+                                "args": []
+                            }
+                        ]
+                    }
+                ],
+                "table_xforms": [
+                    {
+                        "function": "to_unique",
+                        "args": []
+                    }
+                ]
+            },
+            {
+                "name": "extract_order_details",
+                "target": {
+                    "service": "DB_SERVICE",
+                    "host": "DB_HOST",
+                    "port": "DB_PORT",
+                    "database": "DB_DATABASE",
+                    "user": "DB_USER",
+                    "password": "DB_PASSWORD",
+                    "table": "order_details"
+                },
+                "table_xforms": [
+                    {
+                        "function": "to_unique",
+                        "args": []
+                    }
+                ],
+                "columns": [
+                    {
+                        "source_column": "Row ID",
+                        "target_column": "row_id",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Order ID",
+                        "target_column": "order_id",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Product ID",
+                        "target_column": "product_id",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Sales",
+                        "target_column": "sales",
+                        "column_xforms": [
+                            {
+                                "function": "to_decimal",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Quantity",
+                        "target_column": "quantity",
+                        "column_xforms": [
+                            {
+                                "function": "to_int",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Discount",
+                        "target_column": "discount",
+                        "column_xforms": [
+                            {
+                                "function": "to_decimal",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Profit",
+                        "target_column": "profit",
+                        "column_xforms": [
+                            {
+                                "function": "to_decimal",
+                                "args": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "extract_orders",
+                "target": {
+                    "service": "DB_SERVICE",
+                    "host": "DB_HOST",
+                    "port": "DB_PORT",
+                    "database": "DB_DATABASE",
+                    "user": "DB_USER",
+                    "password": "DB_PASSWORD",
+                    "table": "orders"
+                },
+                "table_xforms": [
+                    {
+                        "function": "to_unique"
+                    }
+                ],
+                "columns": [
+                    {
+                        "source_column": "Order ID",
+                        "target_column": "order_id",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Order Date",
+                        "target_column": "order_date",
+                        "column_xforms": [
+                            {
+                                "function": "to_date",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Ship Date",
+                        "target_column": "ship_date",
+                        "column_xforms": [
+                            {
+                                "function": "to_date",
+                                "args": []
+                            }
+                        ]
+                    },
+                    {
+                        "source_column": "Ship Mode",
+                        "target_column": "ship_mode",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Country",
+                        "target_column": "country",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "City",
+                        "target_column": "city",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "State",
+                        "target_column": "state",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Postal Code",
+                        "target_column": "postal_code",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Region",
+                        "target_column": "region",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Customer ID",
+                        "target_column": "customer_id",
+                        "column_xforms": []
+                    }
+                ]
+            },
+            {
+                "name": "extract_products",
+                "target": {
+                    "service": "DB_SERVICE",
+                    "host": "DB_HOST",
+                    "port": "DB_PORT",
+                    "database": "DB_DATABASE",
+                    "user": "DB_USER",
+                    "password": "DB_PASSWORD",
+                    "table": "products"
+                },
+                "table_xforms": [
+                    {
+                        "function": "to_unique"
+                    }
+                ],
+                "columns": [
+                    {
+                        "source_column": "Product ID",
+                        "target_column": "product_id",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Product Name",
+                        "target_column": "product_name",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Category",
+                        "target_column": "category_name",
+                        "column_xforms": []
+                    },
+                    {
+                        "source_column": "Sub-Category",
+                        "target_column": "sub_category_name",
+                        "column_xforms": []
+                    }
+                ]
+            }
+        ]
+    }
+]

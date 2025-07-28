@@ -1,0 +1,203 @@
+{
+    "source_name": "",
+    "format": "",
+    "type": "",
+    "extract_tables": [
+        {
+            "name": "extract_customers",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "customer_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "customer_name",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "segment",
+                    "column_xforms": []
+                }
+            ]
+        },
+        {
+            "name": "extract_order_details",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "row_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "order_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "product_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "sales",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "quantity",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "discount",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "profit",
+                    "column_xforms": []
+                }
+            ]
+        },
+        {
+            "name": "extract_orders",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "order_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "order_date",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "ship_date",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "ship_mode",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "country",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "city",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "state",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "postal_code",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "region",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "customer_id",
+                    "column_xforms": []
+                }
+            ]
+        },
+        {
+            "name": "extract_products",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "product_id",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "product_name",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "category_name",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "sub_category_name",
+                    "column_xforms": []
+                }
+            ]
+        }
+    ]
+}
