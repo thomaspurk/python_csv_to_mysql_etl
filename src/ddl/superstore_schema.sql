@@ -4,7 +4,6 @@ DROP DATABASE IF EXISTS superstore;
 -- Create the "superstore" database
 CREATE DATABASE superstore;
 
-
 -- customers table
 CREATE TABLE superstore.customers (
     customer_id VARCHAR(20) PRIMARY KEY,
