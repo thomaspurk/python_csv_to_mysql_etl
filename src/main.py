@@ -15,7 +15,7 @@ import os
 import etl_pipeline.tasks.extract as extract
 import etl_pipeline.tasks.transform as transform
 import etl_pipeline.tasks.load as load
-import utils.create_db as create_db
+import etl_pipeline.tasks.create_db as create_db
 
 
 # Create the MySQL Database - This is the destination to load data

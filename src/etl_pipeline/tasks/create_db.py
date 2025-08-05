@@ -10,13 +10,15 @@ import json
 import mysql.connector
 
 
-def invoke(DB_CONFIG: dict, DDL_SCRIPT_FILE: str) -> None:
+def invoke(DB_CONFIG: dict, DDL_SCRIPT_FILE: str, output_folder: str = "output") -> None:
     """ Create the the database from the DDL file. Uses the mysql-connector-python package for demonstration. This package cannot execute multiple SQL statements at once andreturn individual cursor message. So the DDL is split into multipl statements.Alternatives, like sqlalchemy, could provide more features.
 
         Args:
             DB_CONFIG (dict): A set of named connection paramaters for the db server where the new database will be created.
 
             DDL_SCRIPT_FILE (str): The path to a ddl containing SQL Statement to create the database and schema. The name of the new database will be in this file, not hte DB_CONFIG dict.
+
+            output_folder: (str): The folder to save metadata files.
 
     """
     print("\n====== Creating New Database =========")
@@ -48,7 +50,7 @@ def invoke(DB_CONFIG: dict, DDL_SCRIPT_FILE: str) -> None:
     
     # Update the mapping skeleton to capture any schema changes.
     DB_CONFIG["database"] = database_name
-    create_mapping_skeleton(DB_CONFIG, "output/mapping_skeleton.json")
+    create_mapping_skeleton(DB_CONFIG, f"{output_folder}/mapping_skeleton.json")
         
 def extract_database_name(statement: str, database_name: str) -> str:
     """ Get the database name from the "CREATE DATABASE" statement. Updates the database_name parameter if applicable.

@@ -1,0 +1,70 @@
+{
+    "source_name": "",
+    "format": "",
+    "type": "",
+    "extract_tables": [
+        {
+            "name": "extract_ab",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "a",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "b",
+                    "column_xforms": []
+                }
+            ]
+        },
+        {
+            "name": "extract_cde",
+            "target": {
+                "service": "DB_SERVICE",
+                "host": "DB_HOST",
+                "port": "DB_PORT",
+                "database": "DB_DATABASE",
+                "user": "DB_USER",
+                "password": "DB_PASSWORD",
+                "table": ""
+            },
+            "table_xforms": [
+                {
+                    "function": "to_unique"
+                }
+            ],
+            "columns": [
+                {
+                    "source_column": "",
+                    "target_column": "c",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "d",
+                    "column_xforms": []
+                },
+                {
+                    "source_column": "",
+                    "target_column": "e",
+                    "column_xforms": []
+                }
+            ]
+        }
+    ]
+}

@@ -32,3 +32,17 @@ pip install -r requirements.txt
 ### Data
 
 https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
+
+### Testing
+
+Automated unit testing is performed by PyTest and testing activities were managed by VS Code's built in tools. More information about how to setup VS Code for PyTest can be found here - https://code.visualstudio.com/docs/python/testing
+
+These test cases rely on ordering flags accross multiple test files. Make sure the ordering argument is added to the VS Code settings.json file
+
+```json
+{
+  "python.testing.pytestArgs": ["src", "--order-scope=session"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
+```
