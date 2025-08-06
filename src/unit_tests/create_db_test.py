@@ -1,7 +1,11 @@
+# Description: Unit tests for cteate_db
+# Author: Thomas Purk
+# Date: 2025-08-06
+
 import pytest
 import os
 import mysql.connector
-from etl_pipeline.tasks.create_db import invoke
+from src.etl_pipeline.tasks.create_db import invoke
 
 # Load the local environment configuration first
 # Some local packages depend on env settings
@@ -16,14 +20,14 @@ DROP DATABASE IF EXISTS {test_db_name};
 
 CREATE DATABASE {test_db_name};
 
-CREATE TABLE {test_db_name}.ab (
+CREATE TABLE {test_db_name}.test_ab (
     a INT PRIMARY KEY,
     b VARCHAR(4)
 );
 
-CREATE TABLE {test_db_name}.cde (
+CREATE TABLE {test_db_name}.test_cde (
     c VARCHAR(4),
-    d VARCHAR(4),
+    d VARCHAR(50),
     e INT PRIMARY KEY
 );
 """
@@ -50,7 +54,7 @@ def test_invoke():
     input_db_config = DB_CONFIG
     input_script_file = out_dir + "temp.sql"
     input_output_folder = out_dir
-    expected_results = "('ab', 'a')\n('ab', 'b')\n('cde', 'c')\n('cde', 'd')\n('cde', 'e')"
+    expected_results = "('test_ab', 'a')\n('test_ab', 'b')\n('test_cde', 'c')\n('test_cde', 'd')\n('test_cde', 'e')"
 
     # Create a file if it doesn't exist or overwrite it if it does.
     with open(input_script_file, "w") as file:

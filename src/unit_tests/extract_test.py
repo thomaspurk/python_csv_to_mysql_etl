@@ -1,6 +1,9 @@
+# Description: Unit tests for extract.py
+# Author: Thomas Purk
+# Date: 2025-08-06
+
 import pandas as pd
 from pandas import DataFrame
-import json
 
 from src.etl_pipeline.tasks.extract import invoke, load_source_from_file
 

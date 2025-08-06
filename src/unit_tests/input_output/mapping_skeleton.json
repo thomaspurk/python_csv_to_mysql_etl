@@ -4,7 +4,7 @@
     "type": "",
     "extract_tables": [
         {
-            "name": "extract_ab",
+            "name": "extract_test_ab",
             "target": {
                 "service": "DB_SERVICE",
                 "host": "DB_HOST",
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "name": "extract_cde",
+            "name": "extract_test_cde",
             "target": {
                 "service": "DB_SERVICE",
                 "host": "DB_HOST",
