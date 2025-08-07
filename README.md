@@ -1,6 +1,6 @@
-# python_csv_to_mysql_etl
+# Python ETL - CSV to MySQL
 
-Using Pandas and a JSON mapping file, transform a flat CSV into a MySQL RDBMS.
+Transforms a flat CSV file into a MySQL RDBMS. This project employee the MySQL and SQlAlchemy libraries at different points as a way to demonstrate the differenced between the two options. No other special ETL packages are used, only standard Python libraries, so that the processes and realtionships among the extract, transform, and load steps could be exposed via custom functions.
 
 ## Development Environment
 
@@ -17,21 +17,29 @@ Using Pandas and a JSON mapping file, transform a flat CSV into a MySQL RDBMS.
 
 1. Clone the GitHub repository
 
+   https://github.com/thomaspurk/python_csv_to_mysql_etl
+
 2. Create a virtual Python Environment.
    <br>NOTE: The .venv folder is listed in the .gitignore file.
 
-```shell
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+   ```shell
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
 3. Create a .env.development.local file. See the file template.env.development.local for required variables.
    <br>NOTE: The .env.development.local file is listed in the .gitignore file.
 
 ### Data
 
+The source of the ETL process is a CSV containing the popular "Superstore" dataset on Kaggle.
+
 https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
+
+This single CSV file contains an unnormalized data set that could be normalized into various forms depending on judgement and preferences. For this project the data is normalized as depicted in the image below. Not that Primary Key - Foreign Key relationships could be added if desired, but are omitted here to avoid contraint errors during data loading.
+
+![alt text](image.png)
 
 ### Testing
 
@@ -46,3 +54,6 @@ These test cases rely on ordering flags accross multiple test files. Make sure t
   "python.testing.pytestEnabled": true
 }
 ```
+
+**Unit Test Results**
+![alt text](image-1.png)

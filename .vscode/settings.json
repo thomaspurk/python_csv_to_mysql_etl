@@ -1,7 +1,9 @@
 {
     "python.testing.pytestArgs": [
         "src",
-        "--order-scope=session"
+        "--order-scope=session",
+        "-v",
+        "-s"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true

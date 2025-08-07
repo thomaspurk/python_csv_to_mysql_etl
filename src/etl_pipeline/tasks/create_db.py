@@ -21,7 +21,6 @@ def invoke(DB_CONFIG: dict, DDL_SCRIPT_FILE: str, output_folder: str = "output")
             output_folder: (str): The folder to save metadata files.
 
     """
-    print("\n====== Creating New Database =========")
 
     # Load the DDL script
     with open(DDL_SCRIPT_FILE, 'r') as f:
@@ -39,11 +38,8 @@ def invoke(DB_CONFIG: dict, DDL_SCRIPT_FILE: str, output_folder: str = "output")
                 statement = statement.strip()
                 database_name = extract_database_name(statement, database_name)
                 cursor.execute(statement)
-                # Print messages  
-                print(f"\n\nExecuted statement: {cursor.statement}")
-                print(f"    Rows affected: {cursor.rowcount}")
 
-                warnings = cursor.fetchwarnings()
+                warnings = cursor.warnings
                 if warnings:
                     for warning in warnings:
                         print(f"    Warning: {warning}")
